@@ -11,6 +11,9 @@ class IrishLifePage:
         self.title = "Investment Key Information Documents | Irish Life"
         self.cookies = "#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll"
         self.dropdown_locator = '.MuiSelect-select[role="button"]'
+        self.dropdown_product_type_index = 0
+        self.dropdown_product_name_index = 1
+        self.dropdown_advisor_index = 2
 
     def goto_website(self):
         self.page.goto(self.url)
@@ -23,13 +26,13 @@ class IrishLifePage:
 
     # What type of product is it?
     def dropdown_product_type(self, option_text: str):
-        self.select_mui_dropdown_by_class(option_text, 0)
+        self.select_mui_dropdown_by_class(option_text, self.dropdown_product_type_index)
 
     def dropdown_product_name(self, option_text: str):
-        self.select_mui_dropdown_by_class(option_text, 1)
+        self.select_mui_dropdown_by_class(option_text, self.dropdown_product_name_index)
 
     def dropdown_advisor(self, option_text: str):
-        self.select_mui_dropdown_by_class(option_text, 2)
+        self.select_mui_dropdown_by_class(option_text, self.dropdown_advisor_index)
 
     def select_mui_dropdown_by_class(self, option_text: str, index: int):
         dropdown_locator = self.page.locator(self.dropdown_locator).nth(index)
