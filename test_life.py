@@ -46,5 +46,5 @@ def test_life_with_pdf_download(page: Page):
     life_page.dropdown_product_name('EBS Choice Saver')
     life_page.dropdown_advisor('EBS')
     
-    # Download all PDFs from API calls
-    life_page.download_all_pdfs_from_api_calls(wait_time_after_click_ms=5000, download_dir="test_pdfs")
+    # Download all PDFs
+    life_page.download_all_pdfs(wait_time_after_click_ms=5000, download_dir="test_pdfs")

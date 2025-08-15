@@ -93,12 +93,12 @@ class IrishLifePage:
             self.page.remove_listener("request", request_handler)
             print("\n--- Request logging finished ---")
 
-    def download_all_pdfs_from_api_calls(self, wait_time_after_click_ms: int = 5000, download_dir: str = "downloaded_pdfs"):
+    def download_all_pdfs(self, wait_time_after_click_ms: int = 5000, download_dir: str = "downloaded_pdfs"):
         """
         Downloads all PDFs by triggering downloads through Playwright's download mechanism.
         
         Args:
-            wait_time_after_click_ms: Time to wait after clicking buttons to capture requests
+            wait_time_after_click_ms: Time to wait after clicking buttons to capture responses
             download_dir: Directory to save downloaded PDFs
         """
         # Set up download handling
